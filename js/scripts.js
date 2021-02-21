@@ -15,22 +15,18 @@ function Game() {
 }
 
 function attachPlayerGridListeners() {
-  $("#11p1").on("click", function() {
-    console.log("X")
-    $("#11p1").text("X");
-    $("#11").text("X");
-  });
-};
-
-$(document).ready(function(){
-  
-  attachPlayerGridListeners();
-  
-})
-// Notes of Project
-// Create 4 constructors
-// writing a prototype that uses the space object to fill a space? fill a space and then create a space object
-//1) Create a Player constructor  
+  for (i = 1; i <= 3; i++) {
+    $("#11p1").on("click", function() {
+      console.log("X")
+      $("#11p1").text("X");
+      $("#11").text("X");
+    });
+  }
+}
+$(document).ready(function() {
+  attachPlayerGridListeners();   
+});
+  // Create 4 constructors
 //2) Space
 //3) Board will have different objects
 //4) Game
