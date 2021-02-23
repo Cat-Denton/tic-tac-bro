@@ -30,6 +30,11 @@ function Game() {
   this.games = {} ;
 }
 
+function isWinner(board) {
+  i = board.currentId
+  for (board)
+}
+
 
 
 function attachPlayerGridListeners(board) {
@@ -75,11 +80,8 @@ function attachPlayerGridListeners(board) {
 let board = new Board();
 
 $(document).ready(function() {
-
-  
-  attachPlayerGridListeners(board);   
-  
-});
+attachPlayerGridListeners(board);   
+  });
 
 // Create 4 constructors
 //4) Game
