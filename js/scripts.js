@@ -13,17 +13,16 @@ function Board() {
 function Game() {
   this.games = {} ;
 }
-
 function attachPlayerGridListeners() {
   let i = 1;
   let y = 1;
+  
+    for (i = 1; i <= 3; i++) {
+    for (y = 1; y <= 3; y++) {
   let gridString = $("#" + i.toString() + y.toString() + "p1");
   let boardString = $("#" + i.toString() + y.toString());
-  for (i = 1; i <= 3; i++) {
-    console.log (gridString)
-    for (y = 1; y <= 3; y++) {
+  console.log (gridString)
       gridString.on("click", function() {
-        console.log("X")
         gridString.text("X");
         boardString.text("X");
       });
