@@ -69,12 +69,9 @@ function attachPlayerGridListeners(board) {
       let id = x;
       console.log(id);
       gridString.on("click", function() {
-
-        console.log(id)
-        (board.findId(id));
         
-        //update space.mark to X
-
+        board.findId(id).mark = "X";
+        
         board[i.toString + y.toString] = "X"
         gridString.text("X");
         boardString.text("X");
