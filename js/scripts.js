@@ -101,10 +101,12 @@ function attachPlayerGridListeners(board) {
 let board = new Board();
   
 function createBoard (board) {
+  let markPlaceholder = 1
   for (i = 1; i <= 3; i++) {
     for (y=1; y <= 3; y++) {
-      let space = new Space(i,y, "");
+      let space = new Space(i,y, markPlaceholder);
       board.makeSpace(space);
+      markPlaceholder++
     }
   }
 }
