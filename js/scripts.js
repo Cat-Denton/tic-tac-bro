@@ -9,24 +9,11 @@ function Space(row,column,mark) {
   this.mark = mark;
 }
 
-// function Board() {
-//   "11" = "";
-//   "12" = "";
-//   "13" = "";
-//   "21" = "";
-//   "22" = "";
-//   "23" = "";
-//   "31" = "";
-//   "32" = "";
-//   "33" = "";
-// }
-
 function Board() {
   this.spaces = {};
   this.currentId = 0;
 }
 
-//Maybe hard-coded board object rather than constructor, update each space with mark prototype
 Board.prototype.spaceId = function() {
   this.currentId += 1;
   return this.currentId;
@@ -44,15 +31,11 @@ Board.prototype.findId = function(id) {
   return false;
 }  
 
-// function Game() {
-//   this.games = {} ;
-// }
-
 function isWinner(board) {
   if (board.findId(1).mark === board.findId(2).mark && board.findId(2).mark === board.findId(3).mark)  {
     return true;
   } else {
-    false
+    return false;
   }
 }
   
@@ -68,16 +51,15 @@ function attachPlayerGridListeners(board) {
        
       x++;
       let id = x;
-    gridString.on("click", function() {
-        
-        board.findId(id).mark = "X";
-        
-        gridString.text("X");
-        boardString.text("X");
+      gridString.on("click", function() {
+        if (board.findId(id).mark === id) {  
+          board.findId(id).mark = "X";
+          gridString.text("X");
+          boardString.text("X");
+        };
       });
-  
-    }
-  }
+    };
+  };
 
   x = 0;
   for (i = 1; i <= 3; i++) {
@@ -89,14 +71,15 @@ function attachPlayerGridListeners(board) {
       let id =x;
     
       gridString.on("click", function() {
-        board.findId(id).mark = "O";
-        
-        gridString.text("O");
-        boardString.text("O");
+        if (board.findId(id).mark === id) {
+          board.findId(id).mark = "O";
+          gridString.text("O");
+          boardString.text("O");
+        };
       });
-    }
-  }
-}
+    };
+  };
+};
   
 let board = new Board();
   
