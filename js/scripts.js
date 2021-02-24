@@ -99,12 +99,5 @@ $(document).ready(function() {
   attachPlayerGridListeners(board);   
 });
 
-// Create 4 constructors
-//4) Game
 
-// Player one turn. Click space
-// What are the winning combos?
-//1) complete row 
-//2) complete column 
-//3) diagonal
  
