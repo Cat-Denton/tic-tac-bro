@@ -44,55 +44,52 @@ Board.prototype.findId = function(id) {
   return false;
 }  
 
-function Game() {
-  this.games = {} ;
-}
+// function Game() {
+//   this.games = {} ;
+// }
 
-// function isWinner(board) {
-  //   i = board.currentId
-  //   for (board)
-  // }
+function isWinner(board) {
+  if (board.findId(1).mark === board.findId(2).mark && board.findId(2).mark === board.findId(3).mark)  {
+    return true;
+  } else {
+    false
+  }
+}
   
 function attachPlayerGridListeners(board) {
   let i = 1;
   let y = 1;
   let x = 0;
   
-   
   for (i = 1; i <= 3; i++) {
     for (y = 1; y <= 3; y++) {
       let gridString = $("#" + i.toString() + y.toString() + "p1");
       let boardString = $("#" + i.toString() + y.toString());
        
-      //create id iterator, needs to go 1-9  
       x++;
       let id = x;
-      console.log(id);
-      gridString.on("click", function() {
+    gridString.on("click", function() {
         
         board.findId(id).mark = "X";
         
-        board[i.toString + y.toString] = "X"
         gridString.text("X");
         boardString.text("X");
       });
-    
-      
+  
     }
   }
-  
 
+  x = 0;
   for (i = 1; i <= 3; i++) {
     for (y = 1; y <= 3; y++) {
       let gridString = $("#" + i.toString() + y.toString() + "p2");
       let boardString = $("#" + i.toString() + y.toString());
-      
-      // let row = i;
-      // let column = y;
-      
+
+      x++;
+      let id =x;
+    
       gridString.on("click", function() {
-        // let space = new Space(row,column,"O");
-        // board.takeSpace(space)
+        board.findId(id).mark = "O";
         
         gridString.text("O");
         boardString.text("O");

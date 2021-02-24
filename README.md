@@ -7,9 +7,9 @@ Tic Tac Toe is a game of two players.
 ## Specs
  
 ```
-Describe:  
-Test: "It should return an array of numbers inputted by the user including the number 0"
-Expect(beepBoop(08234)).toEqual(["08234"]);
+Describe: isWinner(board);
+Test: "If the first row has all one character (x's or o's) it should return true"
+Expect(isWinner(board).toEqual(true));
  
 ```
  
