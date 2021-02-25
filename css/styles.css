@@ -5,6 +5,10 @@
   border: 5px solid black;
 }
 
+#hardHittingList {
+  display: none;
+}
+
 .bro {
   color:red;
   font-weight:bolder;
@@ -38,3 +42,22 @@ h1 {
  width: 400px;
 }
 
+#hit1 {
+  display: none;
+}
+
+#hit2 {
+  display: none;
+}
+
+#hit3 {
+  display: none;
+}
+
+#hit4 {
+  display: none;
+}
+
+#hit5 {
+  display: none;
+}
