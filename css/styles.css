@@ -10,6 +10,23 @@
   font-weight:bolder;
 }
 
+.bruh {
+  color:blue;
+  font-weight:bolder;
+}
+
+#xWinsPic {
+  font-size:128px;
+  margin: auto;
+  display: none;
+}
+
+#oWinsPic {
+  font-size:128px;
+  margin: auto;
+  display: none;
+}
+
 h1 {
   margin: auto;
   width:fit-content;

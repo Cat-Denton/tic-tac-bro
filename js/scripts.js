@@ -74,14 +74,18 @@ function attachPlayerGridListeners(board) {
           boardString.text("X");
           board.switchPlayer();
           if (isWinner(board)) {
-            alert("X Wins!");
+            $("h1").hide();
+            $(".board").hide();
+            $("#xWinsPic").show();
           }
         } else if (board.findId(id).mark === id && board.player === 2) {
           board.findId(id).mark = "O";
           boardString.text("O");
           board.switchPlayer();
           if (isWinner(board)) {
-            alert("O Wins!");
+            $("h1").hide();
+            $(".board").hide();
+            $("#oWinsPic").show();
           }
         }
       });
