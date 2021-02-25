@@ -1,9 +1,9 @@
-# Tic-tac-toe
+# Tic-tac-Bro
 #### Practice project for Object Oriented Javascrript
 #### Project initiated: 02-21-2021
-#### By Sofia Acosta and Cat Denton 
+#### By Cat Denton and Sofia Acosta 
 ## Project Description
-Tic Tac Toe is a game of two players. 
+Tic Tac Bro is a game of two players. 
 ## Specs
  
 ```
@@ -28,7 +28,7 @@ Expect(isWinner(board).toEqual(true));
 * CSS
 * JQuery
 ## Set up / Installation requirements
-* Download a .zip copy of this repository:https://github.com/Sofacosta/tic-tac-toe.git by clicking the green "code" button. 
+* Download a .zip copy of this repository:https://github.com/cat-denton/tic-tac-bro.git by clicking the green "code" button. 
 * Launch the index.html file into your browser
  
 OR
@@ -39,7 +39,7 @@ OR
 * Open index.html into your browser: $ open index.html
  
 ## Known Bugs
-* Game and player board spaces change size when filled with player mark
+* Game board spaces change size when filled with player mark
 ## Notes
 * 
 ## License
