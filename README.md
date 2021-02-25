@@ -13,6 +13,9 @@ Expect(isWinner(board).toEqual(true));
 
 Test: "If any row has all of the same character it should return true"
 Expect(isWinner(board).toEqual(true));
+
+Test: "If any column has all the same character it should return true"
+Expect(isWinner(board).toEqual(true));
  
 ```
  
