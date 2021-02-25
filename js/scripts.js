@@ -72,30 +72,43 @@ function attachPlayerGridListeners(board) {
         if (board.findId(id).mark === id && board.player === 1) {  
           board.findId(id).mark = "X";
           boardString.text("X");
-          $("h1").hide();
-          $(".board").hide();
-          let rando = (Math.floor(Math.random() * 5)+1).toString()
-          $("#hit" + rando).show()
-          // $("#hardHittingList").show();
-          setTimeout(function() {
-            $("h1").show();
-            $(".board").show();
-            $("#hardHittingList").hide();
-          }, 750);
-          board.switchPlayer();
           if (isWinner(board)) {
             $("h1").hide();
             $(".board").hide();
             $("#xWinsPic").show();
+          } else {
+            $("h1").hide();
+            $(".board").hide();
+            let rando = (Math.floor(Math.random() * 5)+1).toString()
+            
+            $("#hit" + rando).show()
+            setTimeout(function() {
+              $("h1").show();
+              $(".board").show();
+              $("#hit" + rando).hide()
+            }, 750);
+            board.switchPlayer();
           }
         } else if (board.findId(id).mark === id && board.player === 2) {
           board.findId(id).mark = "O";
           boardString.text("O");
-          board.switchPlayer();
+          
           if (isWinner(board)) {
             $("h1").hide();
             $(".board").hide();
             $("#oWinsPic").show();
+          } else {
+            $("h1").hide();
+            $(".board").hide();
+            let rando = (Math.floor(Math.random() * 5)+1).toString()
+            
+            $("#hit" + rando).show()
+            setTimeout(function() {
+              $("h1").show();
+              $(".board").show();
+              $("#hit" + rando).hide()
+            }, 750);
+            board.switchPlayer();
           }
         }
       });

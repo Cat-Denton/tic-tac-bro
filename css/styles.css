@@ -38,8 +38,9 @@ h1 {
 }
 
 .board {
- margin: auto;
- width: 400px;
+  font-family: monospace;
+  margin: auto;
+  width: 400px;
 }
 
 #hit1 {
