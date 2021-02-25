@@ -7,12 +7,21 @@ function Space(row,column,mark) {
 function Board() {
   this.spaces = {};
   this.currentId = 0;
+  this.player = 1;
 }
 
 Board.prototype.spaceId = function() {
   this.currentId += 1;
   return this.currentId;
 }
+
+Board.prototype.switchPlayer = function () {
+  if (this.player === 1) {
+    this.player += 1;
+  } else {
+    this.player -= 1;
+  };
+};
 
 Board.prototype.makeSpace = function(space) {
   space.id = this.spaceId();
@@ -55,46 +64,31 @@ function attachPlayerGridListeners(board) {
   
   for (i = 1; i <= 3; i++) {
     for (y = 1; y <= 3; y++) {
-      let gridString = $("#" + i.toString() + y.toString() + "p1");
       let boardString = $("#" + i.toString() + y.toString());
        
       x++;
       let id = x;
-      gridString.on("click", function() {
-        if (board.findId(id).mark === id) {  
+      boardString.on("click", function() {
+        if (board.findId(id).mark === id && board.player === 1) {  
           board.findId(id).mark = "X";
-          gridString.text("X");
           boardString.text("X");
+          board.switchPlayer();
           if (isWinner(board)) {
-            alert("Blue Player Wins!");
+            alert("X Wins!");
           }
-        };
-      });
-    };
-  };
-
-  x = 0;
-  for (i = 1; i <= 3; i++) {
-    for (y = 1; y <= 3; y++) {
-      let gridString = $("#" + i.toString() + y.toString() + "p2");
-      let boardString = $("#" + i.toString() + y.toString());
-
-      x++;
-      let id =x;
-    
-      gridString.on("click", function() {
-        if (board.findId(id).mark === id) {
+        } else if (board.findId(id).mark === id && board.player === 2) {
           board.findId(id).mark = "O";
-          gridString.text("O");
           boardString.text("O");
+          board.switchPlayer();
           if (isWinner(board)) {
-            alert("Red Player Wins!");
+            alert("O Wins!");
           }
-        };
+        }
       });
     };
   };
-};
+}
+
   
 let board = new Board();
   
