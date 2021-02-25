@@ -8,6 +8,12 @@ function Board() {
   this.spaces = {};
   this.currentId = 0;
   this.player = 1;
+  this.counter = 0;
+}
+
+Board.prototype.incrementCounter = function() {
+  this.counter +=1;
+  return this.counter;
 }
 
 Board.prototype.spaceId = function() {
@@ -52,7 +58,7 @@ function isWinner(board) {
     return true;
   } else if (board.findId(7).mark === board.findId(5).mark && board.findId(5).mark === board.findId(3).mark) {
     return true;
-  } else {
+  }  else {
     return false;
   }
 }
@@ -72,11 +78,12 @@ function attachPlayerGridListeners(board) {
         if (board.findId(id).mark === id && board.player === 1) {  
           board.findId(id).mark = "X";
           boardString.text("X");
+          board.incrementCounter();
           if (isWinner(board)) {
             $("h1").hide();
             $(".board").hide();
             $("#xWinsPic").show();
-          } else {
+          } else if (board.counter < 9) {
             $("h1").hide();
             $(".board").hide();
             let rando = (Math.floor(Math.random() * 5)+1).toString()
@@ -88,16 +95,20 @@ function attachPlayerGridListeners(board) {
               $("#hit" + rando).hide()
             }, 750);
             board.switchPlayer();
+          } else {
+            $("h1").hide();
+            $(".board").hide();
+            $("#brosWinPic").show();
           }
         } else if (board.findId(id).mark === id && board.player === 2) {
           board.findId(id).mark = "O";
           boardString.text("O");
-          
+          board.incrementCounter();
           if (isWinner(board)) {
             $("h1").hide();
             $(".board").hide();
             $("#oWinsPic").show();
-          } else {
+          } else if (board.counter < 9) {
             $("h1").hide();
             $(".board").hide();
             let rando = (Math.floor(Math.random() * 5)+1).toString()
@@ -108,6 +119,10 @@ function attachPlayerGridListeners(board) {
               $("#hit" + rando).hide()
             }, 750);
             board.switchPlayer();
+          } else {
+            $("h1").hide();
+            $(".board").hide();
+            $("#brosWinPic").show();
           }
         }
       });

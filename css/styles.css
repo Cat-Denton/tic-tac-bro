@@ -31,6 +31,12 @@
   display: none;
 }
 
+#brosWinPic {
+  font-size:128px;
+  margin:auto;
+  display:none;
+}
+
 h1 {
   margin: auto;
   width:fit-content;
