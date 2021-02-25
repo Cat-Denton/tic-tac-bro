@@ -1,8 +1,3 @@
-// function Player(name,mark) {
-//   this.name = name;
-//   this.mark = mark;
-// }
-
 function Space(row,column,mark) {
   this.row = row;
   this.column = column;
