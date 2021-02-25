@@ -16,6 +16,9 @@ Expect(isWinner(board).toEqual(true));
 
 Test: "If any column has all the same character it should return true"
 Expect(isWinner(board).toEqual(true));
+
+Test: "If either diagonal has all the same character it should return true."
+Expect(isWinner(board).toEqual(true));
  
 ```
  
@@ -36,7 +39,7 @@ OR
 * Open index.html into your browser: $ open index.html
  
 ## Known Bugs
-* No known bugs
+* Game and player board spaces change size when filled with player mark
 ## Notes
 * 
 ## License

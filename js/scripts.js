@@ -1,7 +1,7 @@
-function Player(name,mark) {
-  this.name = name;
-  this.mark = mark;
-}
+// function Player(name,mark) {
+//   this.name = name;
+//   this.mark = mark;
+// }
 
 function Space(row,column,mark) {
   this.row = row;
@@ -44,6 +44,10 @@ function isWinner(board) {
     return true;
   } else if (board.findId(3).mark === board.findId(6).mark && board.findId(6).mark === board.findId(9).mark) {
     return true;
+  } else if (board.findId(1).mark === board.findId(5).mark && board.findId(5).mark === board.findId(9).mark) {
+    return true;
+  } else if (board.findId(7).mark === board.findId(5).mark && board.findId(5).mark === board.findId(3).mark) {
+    return true;
   } else {
     return false;
   }
@@ -66,6 +70,9 @@ function attachPlayerGridListeners(board) {
           board.findId(id).mark = "X";
           gridString.text("X");
           boardString.text("X");
+          if (isWinner(board)) {
+            alert("Blue Player Wins!");
+          }
         };
       });
     };
@@ -85,6 +92,9 @@ function attachPlayerGridListeners(board) {
           board.findId(id).mark = "O";
           gridString.text("O");
           boardString.text("O");
+          if (isWinner(board)) {
+            alert("Red Player Wins!");
+          }
         };
       });
     };
