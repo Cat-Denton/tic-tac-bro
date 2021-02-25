@@ -10,6 +10,9 @@ Tic Tac Toe is a game of two players.
 Describe: isWinner(board);
 Test: "If the first row has all one character (x's or o's) it should return true"
 Expect(isWinner(board).toEqual(true));  
+
+Test: "If any row has all of the same character it should return true"
+Expect(isWinner(board).toEqual(true));
  
 ```
  

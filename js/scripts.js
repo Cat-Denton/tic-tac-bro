@@ -34,6 +34,10 @@ Board.prototype.findId = function(id) {
 function isWinner(board) {
   if (board.findId(1).mark === board.findId(2).mark && board.findId(2).mark === board.findId(3).mark)  {
     return true;
+  } else if (board.findId(4).mark === board.findId(5).mark && board.findId(5).mark === board.findId(6).mark) {
+    return true;
+  } else if (board.findId(7).mark === board.findId(8).mark && board.findId(8).mark === board.findId(9).mark) {
+    return true;
   } else {
     return false;
   }
