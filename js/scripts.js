@@ -101,7 +101,6 @@ function attachPlayerGridListeners(board) {
             $("h1").hide();
             $(".board").hide();
             let rando = (Math.floor(Math.random() * 5)+1).toString()
-            
             $("#hit" + rando).show()
             setTimeout(function() {
               $("h1").show();
