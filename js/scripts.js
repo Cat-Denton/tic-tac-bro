@@ -19,7 +19,6 @@ Board.prototype.makeSpace = function(space) {
   this.spaces[space.id] = space;
 }
 
-
 Board.prototype.findId = function(id) {
   if (this.spaces[id] != undefined) {
     return this.spaces[id];
@@ -70,9 +69,10 @@ function attachPlayerGridListeners(board) {
             alert("Blue Player Wins!");
           }
         };
-      }
-    });
-  }
+      });
+    };
+  };
+
   x = 0;
   for (i = 1; i <= 3; i++) {
     for (y = 1; y <= 3; y++) {
@@ -115,4 +115,4 @@ $(document).ready(function() {
 });
 
 
-      } 
+ 
