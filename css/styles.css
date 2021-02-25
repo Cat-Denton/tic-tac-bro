@@ -5,6 +5,11 @@
   border: 5px solid black;
 }
 
+.bro {
+  color:red;
+  font-weight:bolder;
+}
+
 h1 {
   margin: auto;
   width:fit-content;
